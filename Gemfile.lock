@@ -46,11 +46,21 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
     ast (2.4.0)
+    async (1.24.2)
+      console (~> 1.0)
+      nio4r (~> 2.3)
+      timers (~> 4.1)
+    async-io (1.27.5)
+      async (~> 1.14)
+    async-websocket (0.8.0)
+      async-io
+      websocket-driver (~> 0.7.0)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.1)
     concurrent-ruby (1.1.6)
+    console (1.8.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.6)
@@ -63,12 +73,18 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
+    faraday (1.0.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (1.0.0.rc1)
+      faraday (~> 1.0)
     ffi (1.12.2)
     figaro (1.1.1)
       thor (~> 0.14)
+    gli (2.19.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashdiff (1.0.0)
+    hashie (4.1.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -89,6 +105,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     msgpack (1.3.3)
+    multipart-post (2.1.1)
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -181,6 +198,16 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
+    slack-ruby-bot (0.12.0)
+      hashie
+      slack-ruby-client (>= 0.14.0)
+    slack-ruby-client (0.14.5)
+      activesupport
+      faraday (>= 0.9)
+      faraday_middleware
+      gli
+      hashie
+      websocket-driver
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -194,6 +221,7 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.20.3)
     thread_safe (0.3.6)
+    timers (4.3.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
@@ -209,6 +237,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  async-websocket (~> 0.8.0)
   bootsnap (>= 1.1.0)
   byebug
   database_cleaner
@@ -227,6 +256,7 @@ DEPENDENCIES
   rubocop-thread_safety
   shoulda
   simplecov
+  slack-ruby-bot
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data

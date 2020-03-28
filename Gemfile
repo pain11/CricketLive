@@ -3,11 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+gem 'async-websocket', '~>0.8.0'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'figaro'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '5.2.3'
+gem 'slack-ruby-bot'
 
 gem 'rack-cors', require: 'rack/cors'
 
